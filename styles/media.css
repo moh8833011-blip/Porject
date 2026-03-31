@@ -195,7 +195,6 @@ section .sec-heading b{
    font-size: 20px;
 }
 
-
 }
 @media (max-width:564px) {
 .heroBanner p{
@@ -221,4 +220,43 @@ grid-template-columns:1fr;
 }
 
 
+/* التعديل للموبايل والتابلت */
+@media screen and (max-width: 768px) {
 
+    /* استهداف تاج الـ footer اللي واخد كلاس footer */
+    footer.footer {
+        height: auto !important; /* عشان العناصر تترص تحت بعضها براحتها */
+        padding: 40px 0 !important;
+        display: block !important; 
+    }
+
+    /* استهداف الـ container اللي جوه الفوتر "فقط" */
+    footer.footer > .container {
+        flex-wrap: wrap !important; /* يخلي العواميد تحت بعض */
+        align-items: center !important;
+        text-align: center !important;
+        gap: 40px !important; /* مسافة بين كل عمود والتاني */
+        width: 100% !important;
+    }
+
+    /* استهداف العواميد اللي جوه الفوتر "فقط" */
+    footer.footer .footer-col {
+        width: 100% !important;
+        flex: none !important; /* بيلغي تأثير الـ flex: 1 القديم */
+        margin-bottom: 20px;
+    }
+
+    /* توسيط أيقونات السوشيال واللينكات وزراير الستور جوه الفوتر فقط */
+    footer.footer .social, 
+    footer.footer .links, 
+    footer.footer .apps {
+        justify-content: center !important;
+        display: flex !important;
+    }
+
+    /* لو اللينكات عندك ul جنب بعض، نخليهم تحت بعض برضه */
+    footer.footer .links {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+}
